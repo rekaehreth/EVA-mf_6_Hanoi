@@ -7,8 +7,8 @@ class DiskWidget : public QWidget
 {
     Q_OBJECT
 public:
-    static int diskHeight;
-    static int maxDiskWidth;
+    static const int diskHeight = 300;
+    static const int maxDiskWidth = 50;
     explicit DiskWidget(int diskSize, int diskNumber, QWidget *parent = nullptr);
 
 signals:

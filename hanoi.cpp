@@ -61,7 +61,7 @@ int Hanoi::getDiskNumber()
 QVector<int> Hanoi::getDisksOnTower( int pole )
 {
     QVector<int> result; 
-    for (int i = this->state.size(); i > 0 ; --i ) {
+    for ( int i = ( this->state.size() - 1 ); i > 0 ; --i ) {
         if ( this->state[ i ] == pole ) {
             result.push_back( i );
         }

@@ -2,8 +2,10 @@
 #define HANOIWIDGET_H
 
 #include <QWidget>
+
 #include "hanoi.h"
 #include "towerwidget.h"
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class HanoiWidget; }
