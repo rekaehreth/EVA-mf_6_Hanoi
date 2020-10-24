@@ -112,12 +112,12 @@
     <string>number of disks:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="moveDiskButton">
    <property name="geometry">
     <rect>
      <x>340</x>
      <y>260</y>
-     <width>101</width>
+     <width>121</width>
      <height>31</height>
     </rect>
    </property>
@@ -130,12 +130,12 @@
     <string>Move Disk</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="newGameButton">
    <property name="geometry">
     <rect>
      <x>340</x>
      <y>300</y>
-     <width>101</width>
+     <width>121</width>
      <height>31</height>
     </rect>
    </property>

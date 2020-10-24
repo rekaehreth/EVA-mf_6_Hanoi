@@ -11,10 +11,11 @@ void Hanoi::init()
 {
     startingPole = QRandomGenerator::global()->generate() % 3;
     // **TODO** should get numOfDisks from ui
-    int numOfDisks = 3; 
+    numOfDisks = 3; 
     for ( int i = 0; i < numOfDisks; ++i ){
         this->state.push_back( startingPole );
     }
+    this->updateTowers();
 }
 
 // checks if the current state in state is final
@@ -66,4 +67,9 @@ QVector<int> Hanoi::getDisksOnTower( int pole )
         }
     }
     return result;
+}
+
+void Hanoi::setNumOfDisks(int value)
+{
+    this->numOfDisks = value;
 }

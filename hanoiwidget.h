@@ -2,6 +2,8 @@
 #define HANOIWIDGET_H
 
 #include <QWidget>
+#include "hanoi.h"
+#include "towerwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class HanoiWidget; }
@@ -11,18 +13,21 @@ class HanoiWidget : public QWidget
 {
     Q_OBJECT
 
-private:
-    
+private: 
     Ui::HanoiWidget *ui;
+    Hanoi* _model;
+    int from;
+    int onto;
 
 public:
     HanoiWidget(QWidget *parent = nullptr);
     ~HanoiWidget();
 
 private slots:
-    void set_on_numberSpinbox();
-    void click_on_newGameButton();
-    void sign_moveDisk();
+    void on_newGame();
+    void on_moveDisk();
+    void on_movingRefused();
+    void on_gameOver();
 
 };
 #endif // HANOIWIDGET_H
