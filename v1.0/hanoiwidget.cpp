@@ -15,7 +15,7 @@ HanoiWidget::HanoiWidget(QWidget *parent)
         connect(_model, SIGNAL(updateTowers()), tower, SLOT(on_updateDisks()));
     }
     connect(ui->newGameButton, SIGNAL(clicked()), this, SLOT(on_newGame()));
-    // connect(ui->moveDiskButton, SIGNAL(clicked()), this, SLOT(on_moveDisk()));
+    connect(ui->moveDiskButton, SIGNAL(clicked()), this, SLOT(on_moveDisk()));
     connect(_model, SIGNAL(movingRefused()), this, SLOT(on_movingRefused()));
     connect(_model, SIGNAL(gameOver()), this, SLOT(on_gameOver()));
 
@@ -29,8 +29,12 @@ HanoiWidget::~HanoiWidget()
 
 void HanoiWidget::on_newGame()
 {
-    _model->setNumOfDisks( this->ui->diskNumberBox->value() );
     _model->init();
+}
+
+void HanoiWidget::on_moveDisk()
+{
+    _model->moveDisk( ui->fromBox->value() - 1 , ui->ontoBox->value() - 1 );
 }
 
 void HanoiWidget::on_movingRefused()

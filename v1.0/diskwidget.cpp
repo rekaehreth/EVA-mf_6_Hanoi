@@ -11,13 +11,3 @@ DiskWidget::DiskWidget(int diskSize, int diskNumber, QWidget *parent) : QWidget(
     show();
 }
 
-void DiskWidget::mousePressEvent(QMouseEvent* event) {
-    if (event->button() == Qt::LeftButton) {
-    QDrag* drag = new QDrag(parentWidget());
-    QMimeData* mimeData = new QMimeData();
-    mimeData->setParent(parentWidget());
-    drag->setMimeData(mimeData);
-    drag->exec();
-    }
-}
-

@@ -6,60 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
-    <height>349</height>
+    <width>512</width>
+    <height>283</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Hanoi tower</string>
   </property>
-  <widget class="QSpinBox" name="fromBox">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>260</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="ontoBox">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>260</y>
-     <width>42</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="minimum">
-    <number>1</number>
-   </property>
-   <property name="maximum">
-    <number>3</number>
-   </property>
-  </widget>
   <widget class="QSpinBox" name="diskNumberBox">
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>300</y>
+     <y>230</y>
      <width>42</width>
      <height>22</height>
     </rect>
@@ -76,47 +34,11 @@
     <number>7</number>
    </property>
   </widget>
-  <widget class="QLabel" name="fromLabel">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>260</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>from:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="ontoLabel">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>260</y>
-     <width>51</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>onto:</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="numOfDisksLabel">
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>300</y>
+     <y>230</y>
      <width>161</width>
      <height>21</height>
     </rect>
@@ -130,29 +52,11 @@
     <string>number of disks:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="moveDiskButton">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>260</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Move Disk</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="newGameButton">
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>300</y>
+     <y>230</y>
      <width>121</width>
      <height>31</height>
     </rect>

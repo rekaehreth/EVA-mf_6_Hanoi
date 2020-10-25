@@ -4,8 +4,6 @@
 #include <QWidget>
 #include <QBoxLayout>
 #include <QVector>
-#include <QDropEvent>
-#include <QDragEnterEvent>
 #include "hanoi.h"
 #include "diskwidget.h"
 
@@ -19,14 +17,11 @@ private:
 
 public:
     TowerWidget(Hanoi* m, int id, QWidget *parent = nullptr);
-    int getId() const;
 
 signals:
 
 private slots:
     void on_updateDisks();
-    void dropEvent(QDropEvent* event);
-    void dragEnterEvent(QDragEnterEvent* event);
 };
 
 #endif // TOWERWIDGET_H

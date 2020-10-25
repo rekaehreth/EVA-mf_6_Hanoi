@@ -9,7 +9,6 @@ Hanoi::Hanoi(QObject *parent) : QObject(parent)
 // sets the start state in state
 void Hanoi::init() 
 {
-    this->state.clear();
     startingPole = QRandomGenerator::global()->generate() % 3;
     for ( int i = 0; i < numOfDisks; ++i ){
         this->state.push_back( startingPole );
@@ -47,7 +46,6 @@ bool Hanoi::moveDisk(int from, int onto)
             if ( lastDiskOnFrom < lastDiskOnTo ) {
                 this->state[ lastDiskOnFrom ] = onto;
                 this->updateTowers();
-                if ( this->final() ) gameOver();
                 return true;
             }
         this->movingRefused();

@@ -27,6 +27,7 @@ public:
 
 private slots:
     void on_newGame();
+    void on_moveDisk();
     void on_movingRefused();
     void on_gameOver();
 
