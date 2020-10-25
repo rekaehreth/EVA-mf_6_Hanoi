@@ -10,8 +10,6 @@ Hanoi::Hanoi(QObject *parent) : QObject(parent)
 void Hanoi::init() 
 {
     startingPole = QRandomGenerator::global()->generate() % 3;
-    // **TODO** should get numOfDisks from ui
-    numOfDisks = 3; 
     for ( int i = 0; i < numOfDisks; ++i ){
         this->state.push_back( startingPole );
     }
@@ -39,16 +37,21 @@ bool Hanoi::final()
 // returns if the selected move can be done (i.e. if the state can be changed)
 bool Hanoi::moveDisk(int from, int onto)
 {
-    int lastDiskOnFrom = getDisksOnTower( from ).last();
-    int lastDiskOnTo = getDisksOnTower( onto ).last();
-    if ( lastDiskOnFrom < lastDiskOnTo ) {
-        this->updateTowers();
-        return true;
-    } else {
+    if ( from >= 0 && from < 3 && onto >= 0 && onto < 3 && from != onto ) {
+        QVector<int> diskOnFrom = getDisksOnTower( from );
+        QVector<int> diskOnTo = getDisksOnTower( onto );
+        if ( diskOnFrom.size() != 0 ) {
+            int lastDiskOnFrom = diskOnFrom.last();
+            int lastDiskOnTo = ( diskOnTo.size() == 0 ) ? 42 : diskOnTo.last();
+            if ( lastDiskOnFrom < lastDiskOnTo ) {
+                this->state[ lastDiskOnFrom ] = onto;
+                this->updateTowers();
+                return true;
+            }
         this->movingRefused();
-        return false;
+        }
     }
-
+    return false;
 }
 
 // returns the number of disks on a pole (size of state)
@@ -61,7 +64,7 @@ int Hanoi::getDiskNumber()
 QVector<int> Hanoi::getDisksOnTower( int pole )
 {
     QVector<int> result; 
-    for ( int i = ( this->state.size() - 1 ); i > 0 ; --i ) {
+    for ( int i = ( this->state.size() - 1 ); i >= 0 ; --i ) {
         if ( this->state[ i ] == pole ) {
             result.push_back( i );
         }
@@ -72,4 +75,5 @@ QVector<int> Hanoi::getDisksOnTower( int pole )
 void Hanoi::setNumOfDisks(int value)
 {
     this->numOfDisks = value;
+    this->init();
 }

@@ -31,5 +31,10 @@ private slots:
     void on_movingRefused();
     void on_gameOver();
 
+    void on_diskNumberBox_valueChanged(int arg1);
+
+signals:
+    void set_on_numberSpinbox();
+
 };
 #endif // HANOIWIDGET_H

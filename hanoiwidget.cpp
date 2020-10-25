@@ -18,6 +18,7 @@ HanoiWidget::HanoiWidget(QWidget *parent)
     connect(ui->moveDiskButton, SIGNAL(clicked()), this, SLOT(on_moveDisk()));
     connect(_model, SIGNAL(movingRefused()), this, SLOT(on_movingRefused()));
     connect(_model, SIGNAL(gameOver()), this, SLOT(on_gameOver()));
+
     on_newGame();
 }
 
@@ -33,7 +34,7 @@ void HanoiWidget::on_newGame()
 
 void HanoiWidget::on_moveDisk()
 {
-    _model->moveDisk( ui->fromBox->value(), ui->ontoBox->value() );
+    _model->moveDisk( ui->fromBox->value() - 1 , ui->ontoBox->value() - 1 );
 }
 
 void HanoiWidget::on_movingRefused()
@@ -50,28 +51,7 @@ void HanoiWidget::on_gameOver()
     msg->show();
 }
 
-/*
-void HanoiWidget::set_on_numberSpinbox()
-{
-    QSpinBox* sender = dynamic_cast<QSpinBox*>(QObject::sender());
-    if ( sender == this->ui->diskNumberBox ) {
-        this->model->setNumOfDisks( sender->value() );
-    }
-    if ( sender == this->ui->fromBox ) {
-        this->from = sender->value();
-    }
-    if ( sender == this->ui->ontoBox ) {
-        this->onto = sender->value();
-    }
-}
-
-void HanoiWidget::click_on_newGameButton()
+void HanoiWidget::on_diskNumberBox_valueChanged(int arg1)
 {
 
 }
-
-void HanoiWidget::sign_moveDisk()
-{
-
-}
-*/

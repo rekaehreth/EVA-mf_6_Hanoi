@@ -12,7 +12,7 @@ private:
     QVector<int> state;
 
 public:
-    static const int towerCount = 3;              // **TODO** What's this?
+    static const int towerCount = 3;
     Hanoi(QObject *parent = nullptr);
     /// methods
     void init();                        // sets the start state in state, sets the number of disks
